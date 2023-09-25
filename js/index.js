@@ -1,11 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const template = require('./template')
+const templateReadme = template.generateMarkdown();
+const genLicense = template.generateLicense();
+const genBadge = template.generateLicenseBadge();
 
 // const generateReadme = ({project_title, Description, Installation, Usage, License, Contributing, Tests, Questions, Git_user_name, email});
-const response =
-inquirer
-  .prompt([
+const questions = [
     {
         type: 'input',
         message: 'What is the name of your project?',
@@ -58,13 +59,20 @@ inquirer
         message: 'What is your email?',
         name: 'email',
     },
+]
 
-  ])
+const generate = () => {
 
-  .then((data) => {
-    // const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
-    fs.writeFile('README.md', template.generateMarkdown(), function (err) {
+inquirer
+
+.prompt (questions)
+
+  .then((answer) => {
+    fs.writeFile('README.md', templateReadme, function (err) {
       if (err) throw err;
       console.log('Saved!');
     });
   })
+}
+
+generate();

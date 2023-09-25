@@ -87,8 +87,8 @@ const generateLicense = (license) => {
 }
 
 
-function generateMarkdown(response) {
-    var readme = `# ${response.project_title}
+function generateMarkdown(answer) {
+ return `# ${answer.project_title}
 
 # Table of Contents
 -[Description](#description)
@@ -103,31 +103,36 @@ function generateMarkdown(response) {
 
 ## Description:
 
-    ${response.Description}
+    ${answer.Description}
 ## Installation:
 
-    ${response.Installation}
+    ${answer.Installation}
 ## Usage:
 
-    ${response.Usage}
+    ${answer.Usage}
 ## License:
 
-    ${response.License}
+    ${answer.License}
 ## Contributions:
 
-    ${response.Contributing}
+    ${answer.Contributing}
 ## Tests:
 
-    ${response.Tests}
+    ${answer.Tests}
 ## Questions
 
-    ${response.Questions}
+    ${answer.Questions}
 Contact me with any questions!
 
-   Github Username: ${response.Git_user_name}
+   Github Username: ${answer.Git_user_name}
 
-   Email: ${response.email}
+   Email: ${answer.email}
 `;
 }
 
-module.exports = {generateMarkdown};
+module.exports =
+
+ {generateMarkdown,
+  generateLicense,
+  generateLicenseBadge
+};
