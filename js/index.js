@@ -1,11 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const template = require('./template')
-const templateReadme = template.generateMarkdown();
-const genLicense = template.generateLicense();
-const genBadge = template.generateLicenseBadge();
+const {generateMarkdown} = require('./template');
+const {generateLicense} = require('./template');
+const {generateLicenseBadge} = require('./template');
 
-// const generateReadme = ({project_title, Description, Installation, Usage, License, Contributing, Tests, Questions, Git_user_name, email});
 const questions = [
     {
         type: 'input',
@@ -31,7 +29,7 @@ const questions = [
         type: 'list',
         message: 'Which license will you be using?',
         name: 'License',
-        choices: ['Apache License 2.0', 'GNU General Public License v3.0', ' MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Eclipse Public License 2.0', 'GNU Lesser General Public License v3.0', 'Mozilla Public License 2.0', 'The Unilicense' ]
+        choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Eclipse Public License 2.0', 'GNU Lesser General Public License v3.0', 'Mozilla Public License 2.0', 'The Unilicense' ]
     },
     {
         type: 'input',
@@ -64,15 +62,27 @@ const questions = [
 const generate = () => {
 
 inquirer
-
 .prompt (questions)
 
   .then((answer) => {
-    fs.writeFile('README.md', templateReadme, function (err) {
+    fs.writeFile('README.md', generateMarkdown(answer), function (err) {
       if (err) throw err;
-      console.log('Saved!');
+      console.log('Your README has been saved!');
     });
-  })
+    // fs.appendFileSync('README.md', generateLicense(answer), function (err) {
+    //     if (err) throw err;
+    //     console.log('Your README has been saved!');
+    // })
+  });
 }
+
+//   inquirer
+//   .prompt (questions)
+//   .then((license)) => {
+//     fs.appendFileSync('README.MD', generateLicense(license), function (err) {
+//         if (err) throw err;
+//     console.log('Saved!');
+//     });
+//   }};
 
 generate();
