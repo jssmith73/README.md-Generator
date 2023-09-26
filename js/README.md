@@ -1,4 +1,4 @@
-# test ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
+# README.md Generator ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 # Table of Contents
 
@@ -13,30 +13,30 @@
 
 ## Description:
 
-    test
+    Writes a professional README.md file based off of input answers from the user.
 
 ## Installation:
 
-    test
+    1. Clone Repository, 2. Install Inquirer 8.2.4 (write "npm i inquirer@8.2.4" in command line.
 
 ## Usage:
 
-    test
+    https://drive.google.com/file/d/1oZqZ594u2NXC1r8gLERJ1t9xoDu3D1u8/view
 
 ## License:
 
-    The Unilicense: https://choosealicense.com/licenses/unlicense/
+    MIT License: https://opensource.org/licenses/MIT
 
 ## Contributions:
 
-    test
+    itsaboy
 
 ## Tests:
 
-    test
+    none
 
 ## Questions
 
-   Link to Github: https://github.com/test
+   Link to Github: https://github.com/jssmith73
 
-   Email: test
+   Email: josiahsmith1359@gmail.com

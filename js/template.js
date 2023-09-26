@@ -90,6 +90,7 @@ const generateLicense = (license) => {
         }
 }
 
+// Template for the README file
 
 function generateMarkdown(answer) {
 

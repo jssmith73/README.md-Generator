@@ -4,6 +4,8 @@ const {generateMarkdown} = require('./template');
 const {generateLicense} = require('./template');
 const {generateLicenseBadge} = require('./template');
 
+// List of questions for the user's README.md
+
 const questions = [
     {
         type: 'input',
@@ -59,6 +61,8 @@ const questions = [
     },
 ]
 
+// Function that takes the answers and writes the README
+
 const generate = () => {
 
 inquirer
@@ -69,20 +73,7 @@ inquirer
       if (err) throw err;
       console.log('Your README has been saved!');
     });
-    // fs.appendFileSync('README.md', generateLicense(answer), function (err) {
-    //     if (err) throw err;
-    //     console.log('Your README has been saved!');
-    // })
   });
 }
-
-//   inquirer
-//   .prompt (questions)
-//   .then((license)) => {
-//     fs.appendFileSync('README.MD', generateLicense(license), function (err) {
-//         if (err) throw err;
-//     console.log('Saved!');
-//     });
-//   }};
 
 generate();
